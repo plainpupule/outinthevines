@@ -14,14 +14,13 @@
 
   <header class="topbar">
     <button class="brand" onclick="showView('home')" aria-label="Out in the Vines home">
-      <span class="vinny-mini" aria-hidden="true">🐦</span>
-      <span class="brand-copy"><strong>OUT IN THE VINES</strong><small>DISCOVER. SIP. BELONG.</small></span>
+      <img class="brand-logo-img" src="assets/brand/primary-logo.png" alt="Out in the Vines logo with Vinny the hummingbird">
     </button>
     <nav class="desktop-nav">
       <button onclick="showView('explore')">Explore</button>
       <button onclick="showView('map')">Map</button>
       <button onclick="showView('picks')">Our Picks</button>
-      <button onclick="showView('methodology')">Inclusivity</button>
+      <button onclick="showView('methodology')">Inclusivity</button><button onclick="showView('brandkit')">Brand</button>
     </nav>
     <button class="icon-btn" onclick="showView('favorites')" aria-label="Favorites">♡ <span id="favCountTop">0</span></button>
   </header>
@@ -32,36 +31,7 @@
         <div class="hero-shade"></div>
         <div class="hero-content">
           <div class="vinny-card">
-            <div class="vinny-illustration" aria-label="Vinny the hummingbird mascot">
-              <svg viewBox="0 0 260 220" role="img">
-                <defs>
-                  <linearGradient id="wing" x1="0" x2="1">
-                    <stop offset="0" stop-color="#7A2E6B"/><stop offset=".28" stop-color="#2DB4A3"/>
-                    <stop offset=".52" stop-color="#D4A23F"/><stop offset=".75" stop-color="#7A2E6B"/><stop offset="1" stop-color="#0F7A6B"/>
-                  </linearGradient>
-                  <linearGradient id="body" x1="0" x2="1">
-                    <stop offset="0" stop-color="#0F7A6B"/><stop offset="1" stop-color="#6F8E3A"/>
-                  </linearGradient>
-                  <linearGradient id="throat" y1="0" y2="1">
-                    <stop offset="0" stop-color="#ef476f"/><stop offset=".35" stop-color="#9b5de5"/>
-                    <stop offset=".68" stop-color="#00bbf9"/><stop offset="1" stop-color="#f9c74f"/>
-                  </linearGradient>
-                </defs>
-                <ellipse cx="103" cy="74" rx="75" ry="22" fill="url(#wing)" opacity=".85" transform="rotate(-27 103 74)"/>
-                <ellipse cx="137" cy="72" rx="70" ry="20" fill="url(#wing)" opacity=".76" transform="rotate(25 137 72)"/>
-                <ellipse cx="127" cy="124" rx="45" ry="58" fill="url(#body)"/>
-                <circle cx="151" cy="100" r="30" fill="#168c78"/>
-                <path d="M145 112 Q161 139 131 151 Q108 142 110 119 Z" fill="url(#throat)"/>
-                <circle cx="160" cy="93" r="4.8" fill="#171217"/>
-                <path d="M177 98 L244 86" stroke="#201923" stroke-width="4" stroke-linecap="round"/>
-                <path d="M116 174 l-28 31 39-20 11 25 11-36" fill="#0F7A6B"/>
-                <g transform="translate(171 139)">
-                  <path d="M0 5 q20-9 36 0 v39 q-18 10-36 0z" fill="none" stroke="#F1E8D9" stroke-width="3"/>
-                  <path d="M3 28 q15 8 30 0" fill="#7b2138"/>
-                  <path d="M18 44 v17 M8 61 h20" stroke="#F1E8D9" stroke-width="3"/>
-                </g>
-              </svg>
-            </div>
+            <div class="vinny-illustration realistic"><img src="assets/brand/vinny-hero.png" alt="Vinny, the realistic iridescent hummingbird mascot, holding a glass of red wine"></div>
             <div><span class="script">Hey there,</span><h2>I’m Vinny!</h2><p>Your guide to wine country where you belong.</p></div>
           </div>
 
@@ -100,6 +70,25 @@
         <div class="duo-grid">
           <article class="pick-card andrew"><span class="person">ANDREW’S CURRENT PICK</span><h3>Your favorite Leoness wine</h3><p>Ready for your real tasting note, vintage, and “who will love this” recommendation.</p><button onclick="openWinery('leoness')">View Leoness</button></article>
           <article class="pick-card antonio"><span class="person">ANTONIO’S CURRENT PICK</span><h3>Antonio’s favorite Akash wine</h3><p>Ready for Antonio’s own voice, rating, and ideal moment to order it.</p><button onclick="openWinery('akash')">View Akash</button></article>
+        </div>
+      </section>
+
+
+      <section class="founders-section">
+        <div class="founders-photo">
+          <img src="assets/people/andrew-antonio-ai.png" alt="AI portrait of Andrew, left, and Antonio, right, embracing at golden hour in wine country">
+        </div>
+        <div class="founders-copy">
+          <p class="eyebrow gold">MEET YOUR LOCAL GUIDES</p>
+          <h2>Andrew & Antonio</h2>
+          <p class="founders-lead">Two husbands, two palates, and one shared belief: wine country should feel welcoming before you ever step through the door.</p>
+          <p>Andrew brings the deep Temecula knowledge, editorial perspective, and unapologetically strong opinions. Antonio brings his own palate, cultural perspective, and the extremely important ability to say, “No, order this one instead.”</p>
+          <div class="founder-pills">
+            <span>🍷 Real recommendations</span>
+            <span>🌈 Queer perspective</span>
+            <span>📍 Temecula locals</span>
+          </div>
+          <button class="primary" onclick="showView('picks')">See our picks</button>
         </div>
       </section>
 
@@ -205,6 +194,26 @@
         <div><b>Mixed Experience</b><span>Meaningful inconsistencies documented</span></div>
         <div><b>Use Your Discretion</b><span>Substantial verified concerns</span></div>
         <div><b>Review in Progress</b><span>No conclusion yet</span></div>
+      </div>
+    </section>
+
+
+    <section id="brandkit" class="view">
+      <div class="page-header special">
+        <p class="eyebrow gold">OFFICIAL IDENTITY SYSTEM</p>
+        <h1>The Out in the Vines Brand Kit</h1>
+        <p>Vinny, Andrew, Antonio, the complete color system, and the visual language designed to make inclusive wine travel feel unforgettable.</p>
+      </div>
+      <div class="section brand-kit-page">
+        <img class="full-brand-board" src="assets/brand/official-brand-kit.png" alt="Official Out in the Vines brand kit showing logos, realistic Vinny mascot poses, colors, typography, badges, and applications">
+        <div class="brand-founders-card">
+          <img src="assets/people/andrew-antonio-card.jpg" alt="AI portrait of Andrew and Antonio in wine country">
+          <div>
+            <p class="eyebrow plum">THE PEOPLE BEHIND THE BIRD</p>
+            <h2>Andrew & Antonio</h2>
+            <p>Out in the Vines is built from firsthand experience, shared adventures, and two different palates. Vinny may be the guide, but Andrew and Antonio are the human heart of the brand.</p>
+          </div>
+        </div>
       </div>
     </section>
 

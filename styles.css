@@ -14,3 +14,37 @@
 .trust-strip strong{color:var(--plum)}
 .trust-strip small{color:var(--muted);margin-top:3px;line-height:1.35}
 @media(max-width:700px){.trust-strip{grid-template-columns:1fr}.trust-strip article{padding:15px}}
+
+.brand-logo-img{height:58px;width:auto;display:block;object-fit:contain}
+.vinny-illustration.realistic{width:148px;flex:0 0 148px}
+.vinny-illustration.realistic img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.founders-section{width:min(1180px,90%);margin:45px auto 10px;display:grid;grid-template-columns:1.08fr .92fr;border-radius:32px;overflow:hidden;background:var(--plum);color:white;box-shadow:var(--shadow)}
+.founders-photo{min-height:520px}.founders-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.founders-copy{padding:60px;display:flex;flex-direction:column;justify-content:center}
+.founders-copy h2{font-family:"Playfair Display";font-size:54px;margin:5px 0 20px}
+.founders-copy p{line-height:1.7;color:rgba(255,255,255,.82)}
+.founders-copy .founders-lead{font-size:20px;color:white}
+.founder-pills{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 26px}
+.founder-pills span{background:rgba(255,255,255,.12);padding:9px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.founders-copy .primary{align-self:flex-start;background:var(--gold);color:#311b29}
+.brand-kit-page{display:grid;gap:40px}
+.full-brand-board{width:100%;height:auto;border-radius:26px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.brand-founders-card{display:grid;grid-template-columns:420px 1fr;gap:35px;align-items:center;background:var(--cream);border-radius:26px;padding:28px}
+.brand-founders-card img{width:100%;height:330px;object-fit:cover;border-radius:20px}
+.brand-founders-card h2{margin:3px 0 14px}
+.brand-founders-card p{line-height:1.7;color:var(--muted)}
+@media(max-width:900px){
+  .brand-logo-img{height:48px}
+  .founders-section{grid-template-columns:1fr}
+  .founders-photo{min-height:420px}
+  .brand-founders-card{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .brand-logo-img{height:42px;max-width:210px}
+  .founders-section{width:92%;margin-top:20px}
+  .founders-photo{min-height:360px}
+  .founders-copy{padding:34px 24px}
+  .founders-copy h2{font-size:42px}
+  .brand-founders-card{padding:18px}
+  .brand-founders-card img{height:280px}
+}

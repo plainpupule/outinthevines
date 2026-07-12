@@ -1,4 +1,4 @@
-# Out in the Vines — GitHub Pages Prototype v0.2
+# Out in the Vines — GitHub Pages Founder Preview v0.3
 
 A mobile-first faux product prototype for an inclusive Temecula wine-country guide starring Vinny.
 
@@ -64,3 +64,21 @@ For launch, replace each `image` field in `data.js` with an owned or licensed fi
 ```js
 image: "assets/wineries/leoness-hero.jpg"
 ```
+
+
+## Version 0.3 brand integration
+
+This package now includes local, bundled visual assets:
+
+- Realistic Vinny mascot artwork
+- Out in the Vines primary logo treatment
+- Branded PWA/app icon
+- Full official brand-kit board
+- AI portrait of Andrew and Antonio
+- Founder story section on the homepage
+- Dedicated Brand Kit page
+- Local winery prototype imagery for a fully portable GitHub Pages deployment
+
+Andrew appears on the left and Antonio appears on the right in the founder portrait.
+
+All image paths are local to the repository, so the site will continue working after upload to GitHub Pages.

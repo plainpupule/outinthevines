@@ -1,5 +1,5 @@
 {
-  "name": "Out in the Vines Prototype v0.2",
+  "name": "Out in the Vines \u2014 Founder Preview",
   "short_name": "Out in Vines",
   "start_url": "./",
   "display": "standalone",
@@ -7,9 +7,9 @@
   "theme_color": "#4B1E4D",
   "icons": [
     {
-      "src": "icon.svg",
+      "src": "assets/brand/app-icon.png",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ],
