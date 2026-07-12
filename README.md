@@ -135,3 +135,16 @@ The static prototype uses curated event records. A production event system shoul
 - Adds `WINERY_PROFILE_THEME_SYSTEM.md`
 
 The five prototype themes are Estate, Modern, Moto, European, and Celebration.
+
+
+## Founder’s Edition v1
+- Winery Spotlight
+- Currently Pouring
+- New & Noteworthy
+- Prominent Welcome Index placement
+- Vinny Verified badge system
+- Welcome designation on winery cards
+- Sticky mobile Welcome badge near the top of every winery profile
+- Detailed confidence and evidence summary
+- Founder’s Edition design manifesto
+- Badge-system documentation

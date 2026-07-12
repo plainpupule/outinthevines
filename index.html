@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="demo-banner">FOUNDER PREVIEW v0.4 · Working concept for GitHub Pages.</div>
+  <div class="demo-banner">OUT IN THE VINES · FOUNDER’S EDITION · TEMECULA</div>
 
   <header class="topbar">
     <button class="brand" onclick="showView('home')" aria-label="Out in the Vines home">
@@ -80,6 +80,12 @@
       </section>
 
 
+
+      <section class="welcome-home"><div class="welcome-home-inner">
+        <div class="welcome-home-badge"><div class="verified-medal"><img src="assets/brand/vinny-pride.png" alt="Vinny hummingbird"><span>VINNY VERIFIED™</span><strong>Highly Welcoming</strong><small>WELCOME INDEX™</small></div></div>
+        <div class="welcome-home-copy"><p class="eyebrow gold">THE WELCOME INDEX™</p><h2>Hospitality is not a footnote.</h2><p>It is the reason many travelers choose one winery over another. The Welcome Index™ turns hospitality, guest comfort, conflict resolution, public actions, and lived experience into a transparent editorial report.</p><p><strong>Vinny Verified™</strong> is the recognition wineries can earn when the evidence supports consistently exceptional hospitality.</p><div class="welcome-home-actions"><button class="primary" onclick="showView('methodology')">How the index works</button><button class="secondary light" onclick="showView('explore')">Explore wineries</button></div></div>
+      </div></section>
+
       <section class="founders-section">
         <div class="founders-photo">
           <img src="assets/people/andrew-antonio-ai.png" alt="AI portrait of Andrew, left, and Antonio, right, embracing at golden hour in wine country">
@@ -117,6 +123,36 @@
           <article><span>📍</span><h3>Vinny Nearby</h3><p>Open now, close by, and right for the moment.</p><button onclick="showView('nearby')">Try the mock mode</button></article>
           <article><span>🍇</span><h3>Wine Passport</h3><p>Track wineries visited and unlock regional milestones.</p><button onclick="showView('passport')">Preview passport</button></article>
           <article><span>🗓️</span><h3>Events</h3><p>Music, dinners, drag brunches, tastings, and more.</p><button onclick="showView('events')">Preview events</button></article>
+        </div>
+      </section>
+
+
+      <section class="section winery-spotlight">
+        <div class="spotlight-media">
+          <img src="assets/wineries/leoness.jpg" alt="Prototype vineyard imagery for the Winery Spotlight">
+          <div class="spotlight-badge"><img src="assets/brand/vinny-cheers.png" alt=""><div><span>WINERY SPOTLIGHT</span><strong>Leoness Cellars</strong></div></div>
+        </div>
+        <div class="spotlight-copy">
+          <p class="eyebrow plum">WINERY SPOTLIGHT</p><h2>One of Temecula’s best places to slow down.</h2>
+          <p class="spotlight-dek">Leoness is the kind of winery that rewards an unhurried afternoon: estate wines, vineyard views, and a meal worth planning around.</p>
+          <blockquote>“We’ve returned enough times to know the magic isn’t one single thing. It’s the way the wine, the view, and the pace all work together.”</blockquote>
+          <div class="spotlight-signoff"><strong>Andrew & Antonio</strong><span>Personal experience note · Prototype copy</span></div>
+          <div class="spotlight-actions"><button class="primary" onclick="openWinery('leoness')">Explore Leoness</button><button class="secondary" onclick="showView('picks')">Read our notes</button></div>
+        </div>
+      </section>
+      <section class="section currently-pouring">
+        <div class="section-head"><div><p class="eyebrow gold">CURRENTLY POURING</p><h2>What’s in our glasses</h2></div><p class="section-kicker">Personal, current, and intentionally selective.</p></div>
+        <div class="pour-grid">
+          <article class="pour-card"><div class="pour-bottle">🍷</div><div><span>ANDREW</span><h3>Leoness Cabernet Franc</h3><p>“Still my benchmark red for a slow Temecula afternoon.”</p><small>Placeholder tasting note</small></div></article>
+          <article class="pour-card"><div class="pour-bottle">🥂</div><div><span>ANTONIO</span><h3>Akash Rosé</h3><p>“Bright, easy, and exactly what I want when friends visit.”</p><small>Placeholder tasting note</small></div></article>
+        </div>
+      </section>
+      <section class="section noteworthy">
+        <div class="section-head"><div><p class="eyebrow teal">NEW & NOTEWORTHY</p><h2>Right now in wine country</h2></div></div>
+        <div class="noteworthy-grid">
+          <article><span>EVENTS</span><h3>Live music this weekend</h3><p>See which wineries are programming music, dinners, and evening events.</p><button onclick="showView('events')">Browse events</button></article>
+          <article><span>GUIDE</span><h3>Three wineries. One excellent day.</h3><p>Build a realistic itinerary without turning wine tasting into a race.</p><button onclick="showView('myday')">Build My Day</button></article>
+          <article><span>WELCOME INDEX</span><h3>Hospitality, made transparent</h3><p>See how the Welcome Index™ and Vinny Verified™ recognition work.</p><button onclick="showView('methodology')">Explore the standard</button></article>
         </div>
       </section>
 
@@ -214,6 +250,9 @@
         <div class="method-card"><span>05</span><h3>Right to respond</h3><p>Wineries should have a clear process to correct outdated facts, supply context, and describe improvements.</p></div>
         <div class="method-card"><span>06</span><h3>Confidence matters</h3><p>A score will be paired with low, medium, or high confidence so limited evidence is never mistaken for a definitive conclusion.</p></div>
       </div>
+
+
+      <div class="section badge-showcase"><div><p class="eyebrow plum">THE RECOGNITION</p><h2>Vinny Verified™</h2><p>A visible recognition for wineries that meet the Welcome Index™ threshold with sufficient evidence and confidence.</p><div class="badge-uses"><span>Website badge</span><span>Tasting-room decal</span><span>Printed certificate</span><span>Social graphic</span></div></div><div class="badge-mockups"><div class="verified-medal large"><img src="assets/brand/vinny-pride.png" alt="Vinny hummingbird"><span>VINNY VERIFIED™</span><strong>Highly Welcoming</strong><small>WELCOME INDEX™ · OUT IN THE VINES</small></div><div class="badge-mini"><img src="assets/brand/vinny-pride.png" alt=""><div><b>VINNY VERIFIED™</b><span>Highly Welcoming</span></div></div></div></div>
 
       <div class="section standard-framework">
         <div class="section-head"><div><p class="eyebrow plum">FORMAL REVIEW FRAMEWORK</p><h2>How a review becomes publishable</h2></div></div>

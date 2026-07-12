@@ -1,6 +1,7 @@
 window.WINERIES = [
 {
- id:"leoness", name:"Leoness Cellars", area:"De Portola Wine Trail",
+ id:"leoness", welcome:{designation:"Highly Welcoming",recognition:"Vinny Verified™",confidence:"High",reviewed:"June 2026",summary:"Strong firsthand hospitality signals and a polished guest experience.",evidence:["Firsthand visits","Hospitality interactions","Public information review"]},
+ name:"Leoness Cellars", area:"De Portola Wine Trail",
  image:"assets/wineries/leoness.jpg", imageAlt:"Prototype wine-country photography. Replace with owned or licensed Leoness imagery.",
  vibe:"Scenic · Wine-focused · Elevated dining",
  short:"Estate wine, vineyard views, tours, and a destination restaurant make Leoness a strong slow-down-and-stay-awhile stop.",
@@ -50,7 +51,8 @@ window.WINERIES = [
  gradient:"linear-gradient(135deg,#3b152f,#a95a61)", address:"38311 De Portola Rd, Temecula, CA"
 },
 {
- id:"akash", name:"Akash Winery", area:"Calle Contento",
+ id:"akash", welcome:{designation:"Welcoming",recognition:"Welcome Index™",confidence:"Medium",reviewed:"June 2026",summary:"Positive social atmosphere with additional review work still underway.",evidence:["Firsthand visit","Public event and policy review"]},
+ name:"Akash Winery", area:"Calle Contento",
  image:"assets/wineries/akash.jpg", imageAlt:"Prototype wine-country photography. Replace with owned or licensed Akash imagery.",
  vibe:"Social · Modern · Patio energy",
  short:"Vineyard-view patios, wine, house-made beer, music, food pop-ups, and a casual social atmosphere.",
@@ -100,7 +102,8 @@ window.WINERIES = [
  gradient:"linear-gradient(135deg,#143e3a,#2DB4A3)", address:"39730 Calle Contento, Temecula, CA"
 },
 {
- id:"doffo", name:"Doffo Winery", area:"De Portola Wine Trail",
+ id:"doffo", welcome:{designation:"Welcoming",recognition:"Welcome Index™",confidence:"Medium",reviewed:"June 2026",summary:"Positive guest-experience indicators with additional documentation pending.",evidence:["Firsthand visit","Public information review"]},
+ name:"Doffo Winery", area:"De Portola Wine Trail",
  image:"assets/wineries/doffo.jpg", imageAlt:"Prototype wine-country photography. Replace with owned or licensed Doffo imagery.",
  vibe:"Family-owned · Distinctive · Motorcycle culture",
  short:"A family winery known for red wines and the MotoDoffo collection of more than 200 vintage motorcycles and scooters.",
@@ -150,7 +153,8 @@ window.WINERIES = [
  gradient:"linear-gradient(135deg,#372f29,#a56b3f)", address:"36083 Summitville St, Temecula, CA"
 },
 {
- id:"europa", name:"Europa Village", area:"Rancho California Road",
+ id:"europa", welcome:{designation:"Highly Welcoming",recognition:"Vinny Verified™",confidence:"High",reviewed:"June 2026",summary:"Consistently positive hospitality signals across a complex destination experience.",evidence:["Multiple visits","Hospitality interactions","Public information review"]},
+ name:"Europa Village", area:"Rancho California Road",
  image:"assets/wineries/europa.jpg", imageAlt:"Prototype wine-country photography. Replace with owned or licensed Europa Village imagery.",
  vibe:"Immersive · Romantic · All-afternoon destination",
  short:"French, Spanish, and Italian-inspired wine-country experiences with tastings, dining, tours, events, and lodging.",
@@ -201,7 +205,8 @@ window.WINERIES = [
  gradient:"linear-gradient(135deg,#593b25,#d0a35a)", address:"41150 Via Europa, Temecula, CA"
 },
 {
- id:"wilson", name:"Wilson Creek Winery", area:"Winchester Road",
+ id:"wilson", welcome:{designation:"Welcoming",recognition:"Welcome Index™",confidence:"Medium",reviewed:"June 2026",summary:"Strong group hospitality with additional evidence gathering in progress.",evidence:["Firsthand visit","Public information review"]},
+ name:"Wilson Creek Winery", area:"Winchester Road",
  image:"assets/wineries/wilson.jpg", imageAlt:"Prototype wine-country photography. Replace with owned or licensed Wilson Creek imagery.",
  vibe:"Energetic · Group-friendly · Full-service",
  short:"A large wine-country destination with a tasting room, dining, picnic areas, events, and its signature Almond Sparkling Wine.",

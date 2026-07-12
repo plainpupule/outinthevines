@@ -18,7 +18,7 @@ function card(w){
  return `<article class="winery-card">
   <div class="card-image photo-card" style="background-image:linear-gradient(180deg,transparent 30%,rgba(22,10,18,.72)),url('${w.image}')" role="img" aria-label="${w.imageAlt}">
    <span>${w.icon}</span><button class="heart ${saved?"saved":""}" onclick="event.stopPropagation();toggleFavorite('${w.id}')">${saved?"♥":"♡"}</button>
-  </div><div class="card-body"><div class="area">${w.area.toUpperCase()}</div><h3>${w.name}</h3><p><strong>${w.vibe}</strong></p><p>${w.short}</p>
+  </div><div class="card-body"><div class="area">${w.area.toUpperCase()}</div><div class="card-welcome"><span>◆</span>${w.welcome?.designation||"Review in Progress"}</div><h3>${w.name}</h3><p><strong>${w.vibe}</strong></p><p>${w.short}</p>
   <div class="tags">${w.tags.slice(0,3).map(t=>`<span class="tag">${t}</span>`).join("")}</div>
   <div class="card-actions"><button onclick="openWinery('${w.id}')">View profile</button><button onclick="addToDay('${w.id}')">+ My Day</button></div></div></article>`;
 }
@@ -67,7 +67,7 @@ function openWinery(id){
    <div class="hero-ornament"></div>
    <div class="winery-hero-content"><button class="back" onclick="showView('explore')">← Back to explore</button><p class="eyebrow gold">${w.area.toUpperCase()}</p><h1>${w.name}</h1><p>${w.vibe}</p>
    <div class="profile-hero-actions"><button onclick="toggleFavorite('${w.id}')">${favorites.includes(w.id)?"♥ Saved":"♡ Save"}</button><button onclick="addToDay('${w.id}')">+ My Day</button><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(w.address)}" target="_blank" rel="noopener">Directions ↗</a></div></div></div>
-  <div class="profile-nav themed-nav"><button onclick="scrollProfile('overview')">Overview</button><button onclick="scrollProfile('quick-look')">Quick Look</button><button onclick="scrollProfile('hours')">Hours</button><button onclick="scrollProfile('events-profile')">Events</button><button onclick="scrollProfile('reviews-profile')">Reviews</button><button onclick="scrollProfile('welcome-profile')">Welcome</button></div>
+  <div class="profile-welcome-strip"><button class="profile-welcome-badge" onclick="scrollProfile('welcome-profile')"><div class="welcome-icon"><img src="assets/brand/vinny-pride.png" alt=""></div><div class="welcome-copy"><small>${w.welcome?.recognition||"WELCOME INDEX™"}</small><strong>${w.welcome?.designation||"Review in Progress"}</strong><span>${w.welcome?.confidence||"Low"} confidence · Reviewed ${w.welcome?.reviewed||w.lastVerified}</span></div><div class="welcome-arrow">See why →</div></button></div><div class="profile-nav themed-nav"><button onclick="scrollProfile('overview')">Overview</button><button onclick="scrollProfile('quick-look')">Quick Look</button><button onclick="scrollProfile('hours')">Hours</button><button onclick="scrollProfile('events-profile')">Events</button><button onclick="scrollProfile('reviews-profile')">Reviews</button><button onclick="scrollProfile('welcome-profile')">Welcome</button></div>
 
   <div class="profile-signature">${profileSignature(w)}</div>
 
@@ -116,7 +116,7 @@ function openWinery(id){
    </main>
 
    <aside>
-    <div id="welcome-profile" class="rating-box themed-rating"><p class="eyebrow gold">VINNY WELCOME RATING</p><div class="rating-num">${w.demoRating}<small>/ 5</small></div><strong>${w.status}</strong><small>Confidence: ${w.confidence}</small><small>This is placeholder interface content, not a published assessment.</small><button onclick="showView('methodology')">How the standard works</button></div>
+    <div id="welcome-profile" class="rating-box themed-rating detailed-welcome"><p class="eyebrow gold">${w.welcome?.recognition||"WELCOME INDEX™"}</p><h3>${w.welcome?.designation||"Review in Progress"}</h3><p>${w.welcome?.summary||"Assessment in progress."}</p><div class="confidence-line"><b>${w.welcome?.confidence||"Low"} confidence</b><span>Reviewed ${w.welcome?.reviewed||w.lastVerified}</span></div><div class="welcome-evidence">${(w.welcome?.evidence||[]).map(x=>`<span>✓ ${x}</span>`).join("")}</div><small>Prototype assessment content for interface demonstration.</small><button onclick="showView('methodology')">Read the Welcome Index</button></div>
     <div class="profile-side-card themed-side"><h3>First-visit essentials</h3><div class="fact-list">${w.facts.map(f=>`<div class="fact">✓ ${f}</div>`).join("")}</div></div>
     <div class="profile-side-card themed-side"><h3>Group note</h3><p>${p.groups||"Contact the winery for larger parties."}</p></div>
     <div class="profile-side-card themed-side"><h3>Official information</h3><a href="${w.source}" target="_blank" rel="noopener">Visit official winery page ↗</a><p>Last checked: ${w.lastVerified}</p></div>

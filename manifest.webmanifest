@@ -1,5 +1,5 @@
 {
-  "name": "Out in the Vines \u2014 Distinctive Winery Profiles v0.6",
+  "name": "Out in the Vines \u2014 Founder\u2019s Edition",
   "short_name": "Out in Vines",
   "start_url": "./",
   "display": "standalone",
@@ -13,5 +13,5 @@
       "purpose": "any maskable"
     }
   ],
-  "description": "A vibe-first inclusive wine travel prototype with winery-specific profile design."
+  "description": "Discover great wine. Feel genuinely welcome."
 }
