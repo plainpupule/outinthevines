@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#4B1E4D">
+  <meta name="description" content="Out in the Vines — an inclusive guide to Temecula wine country.">
+  <title>Out in the Vines</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-banner">CONCEPT PROTOTYPE · Inclusivity ratings and personal wine picks are demonstration content only.</div>
+
+  <header class="topbar">
+    <button class="brand" onclick="showView('home')" aria-label="Out in the Vines home">
+      <span class="vinny-mini" aria-hidden="true">🐦</span>
+      <span class="brand-copy"><strong>OUT IN THE VINES</strong><small>DISCOVER. SIP. BELONG.</small></span>
+    </button>
+    <nav class="desktop-nav">
+      <button onclick="showView('explore')">Explore</button>
+      <button onclick="showView('map')">Map</button>
+      <button onclick="showView('picks')">Our Picks</button>
+      <button onclick="showView('methodology')">Inclusivity</button>
+    </nav>
+    <button class="icon-btn" onclick="showView('favorites')" aria-label="Favorites">♡ <span id="favCountTop">0</span></button>
+  </header>
+
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <div class="vinny-card">
+            <div class="vinny-illustration" aria-label="Vinny the hummingbird mascot">
+              <svg viewBox="0 0 260 220" role="img">
+                <defs>
+                  <linearGradient id="wing" x1="0" x2="1">
+                    <stop offset="0" stop-color="#7A2E6B"/><stop offset=".28" stop-color="#2DB4A3"/>
+                    <stop offset=".52" stop-color="#D4A23F"/><stop offset=".75" stop-color="#7A2E6B"/><stop offset="1" stop-color="#0F7A6B"/>
+                  </linearGradient>
+                  <linearGradient id="body" x1="0" x2="1">
+                    <stop offset="0" stop-color="#0F7A6B"/><stop offset="1" stop-color="#6F8E3A"/>
+                  </linearGradient>
+                  <linearGradient id="throat" y1="0" y2="1">
+                    <stop offset="0" stop-color="#ef476f"/><stop offset=".35" stop-color="#9b5de5"/>
+                    <stop offset=".68" stop-color="#00bbf9"/><stop offset="1" stop-color="#f9c74f"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="103" cy="74" rx="75" ry="22" fill="url(#wing)" opacity=".85" transform="rotate(-27 103 74)"/>
+                <ellipse cx="137" cy="72" rx="70" ry="20" fill="url(#wing)" opacity=".76" transform="rotate(25 137 72)"/>
+                <ellipse cx="127" cy="124" rx="45" ry="58" fill="url(#body)"/>
+                <circle cx="151" cy="100" r="30" fill="#168c78"/>
+                <path d="M145 112 Q161 139 131 151 Q108 142 110 119 Z" fill="url(#throat)"/>
+                <circle cx="160" cy="93" r="4.8" fill="#171217"/>
+                <path d="M177 98 L244 86" stroke="#201923" stroke-width="4" stroke-linecap="round"/>
+                <path d="M116 174 l-28 31 39-20 11 25 11-36" fill="#0F7A6B"/>
+                <g transform="translate(171 139)">
+                  <path d="M0 5 q20-9 36 0 v39 q-18 10-36 0z" fill="none" stroke="#F1E8D9" stroke-width="3"/>
+                  <path d="M3 28 q15 8 30 0" fill="#7b2138"/>
+                  <path d="M18 44 v17 M8 61 h20" stroke="#F1E8D9" stroke-width="3"/>
+                </g>
+              </svg>
+            </div>
+            <div><span class="script">Hey there,</span><h2>I’m Vinny!</h2><p>Your guide to wine country where you belong.</p></div>
+          </div>
+
+          <p class="eyebrow">TEMECULA, CALIFORNIA</p>
+          <h1>Find your kind of<br><em>wine country.</em></h1>
+          <p class="hero-copy">Inclusive insights, honest local recommendations, and really good wine.</p>
+          <div class="hero-actions">
+            <button class="primary" onclick="showView('match')">Help me choose</button>
+            <button class="secondary light" onclick="showView('explore')">Explore wineries</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="section intro">
+        <p class="eyebrow plum">START WITH THE VIBE</p>
+        <h2>What kind of wine day are we having?</h2>
+        <div class="mood-grid">
+          <button onclick="quickFilter('romantic')"><span>💕</span><strong>Romantic</strong><small>Views, dining, slow sips</small></button>
+          <button onclick="quickFilter('reds')"><span>🍷</span><strong>Great reds</strong><small>Wine first, always</small></button>
+          <button onclick="quickFilter('food')"><span>🍽️</span><strong>Food too</strong><small>No sad crackers today</small></button>
+          <button onclick="quickFilter('social')"><span>🎶</span><strong>Lively</strong><small>Music, groups, energy</small></button>
+          <button onclick="quickFilter('unique')"><span>🏍️</span><strong>Something different</strong><small>Not your standard tasting</small></button>
+          <button onclick="showView('methodology')"><span>🌈</span><strong>Feel welcome</strong><small>See how we evaluate</small></button>
+        </div>
+      </section>
+
+      <section class="section picks-preview">
+        <div class="section-head"><div><p class="eyebrow gold">TWO HUSBANDS. TWO PALATES.</p><h2>Andrew & Antonio’s picks</h2></div><button class="text-btn" onclick="showView('picks')">See all →</button></div>
+        <div class="duo-grid">
+          <article class="pick-card andrew"><span class="person">ANDREW’S CURRENT PICK</span><h3>Your favorite Leoness wine</h3><p>Ready for your real tasting note, vintage, and “who will love this” recommendation.</p><button onclick="openWinery('leoness')">View Leoness</button></article>
+          <article class="pick-card antonio"><span class="person">ANTONIO’S CURRENT PICK</span><h3>Antonio’s favorite Akash wine</h3><p>Ready for Antonio’s own voice, rating, and ideal moment to order it.</p><button onclick="openWinery('akash')">View Akash</button></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><p class="eyebrow teal">VINNY’S SHORTLIST</p><h2>Five very different wine days</h2></div><button class="text-btn" onclick="showView('explore')">Explore all →</button></div>
+        <div id="featuredWineries" class="card-scroll"></div>
+      </section>
+    </section>
+
+    <section id="match" class="view">
+      <div class="page-header compact">
+        <button class="back" onclick="showView('home')">← Back</button>
+        <p class="eyebrow gold">VINNY’S QUICK MATCH</p>
+        <h1>Tell me the vibe.<br>I’ll handle the wineries.</h1>
+        <p>Choose what matters most today. Vinny will rank your best matches.</p>
+      </div>
+      <div class="matcher">
+        <div class="match-step"><span>1</span><div><h3>What are we drinking?</h3><div class="choice-row" data-group="drink">
+          <button data-value="reds">Bold reds</button><button data-value="white">Crisp whites</button><button data-value="sparkling">Sparkling</button><button data-value="anything">Surprise me</button>
+        </div></div></div>
+        <div class="match-step"><span>2</span><div><h3>What’s the mood?</h3><div class="choice-row" data-group="mood">
+          <button data-value="romantic">Romantic</button><button data-value="social">Lively</button><button data-value="relaxed">Relaxed</button><button data-value="unique">Unexpected</button>
+        </div></div></div>
+        <div class="match-step"><span>3</span><div><h3>What matters today?</h3><div class="choice-row" data-group="priority">
+          <button data-value="food">Real food</button><button data-value="views">Views</button><button data-value="music">Music</button><button data-value="groups">Group friendly</button>
+        </div></div></div>
+        <button class="primary wide" onclick="runMatcher()">Show my matches</button>
+      </div>
+      <div id="matchResults" class="section hidden"><div class="section-head"><div><p class="eyebrow teal">BEST MATCHES</p><h2>Vinny’s picks for today</h2></div></div><div id="matchGrid" class="winery-grid"></div></div>
+    </section>
+
+    <section id="explore" class="view">
+      <div class="page-header">
+        <p class="eyebrow gold">TEMECULA WINE COUNTRY</p>
+        <h1>Explore wineries</h1>
+        <p>Five prototype profiles. Real winery characteristics, demo editorial ratings.</p>
+      </div>
+      <div class="explore-tools">
+        <input id="searchInput" type="search" placeholder="Search wineries, wine, or vibe…" oninput="renderExplore()">
+        <div class="filter-row" id="filters">
+          <button class="active" data-filter="all">All</button><button data-filter="food">Food</button><button data-filter="romantic">Date night</button><button data-filter="social">Lively</button><button data-filter="unique">Unique</button><button data-filter="reds">Great reds</button>
+        </div>
+      </div>
+      <div id="exploreGrid" class="winery-grid section"></div>
+    </section>
+
+    <section id="map" class="view">
+      <div class="page-header compact"><p class="eyebrow gold">MOCK MAP VIEW</p><h1>Wine country at a glance</h1><p>This visual map demonstrates the future interaction. Pins are approximate, not navigational.</p></div>
+      <div class="map-shell">
+        <div class="fake-map">
+          <div class="road r1">RANCHO CALIFORNIA RD</div><div class="road r2">DE PORTOLA RD</div>
+          <button class="map-pin p1" onclick="openWinery('wilson')">🍇<span>Wilson Creek</span></button>
+          <button class="map-pin p2" onclick="openWinery('akash')">🍇<span>Akash</span></button>
+          <button class="map-pin p3" onclick="openWinery('europa')">🍇<span>Europa</span></button>
+          <button class="map-pin p4" onclick="openWinery('leoness')">🍇<span>Leoness</span></button>
+          <button class="map-pin p5" onclick="openWinery('doffo')">🍇<span>Doffo</span></button>
+          <div class="map-vinny">🐦 <strong>Vinny says:</strong> Keep your day to three stops. Wine country is not a scavenger hunt.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="picks" class="view">
+      <div class="page-header special">
+        <p class="eyebrow gold">ANDREW & ANTONIO</p>
+        <h1>We drank through Temecula<br>so you don’t have to.</h1>
+        <p>Actually, we’ll probably keep doing it anyway.</p>
+      </div>
+      <div class="section">
+        <div class="notice">These personal wine selections are placeholders awaiting Andrew and Antonio’s real picks. The prototype demonstrates how each recommendation will look.</div>
+        <div id="picksGrid" class="duo-grid"></div>
+      </div>
+    </section>
+
+    <section id="favorites" class="view">
+      <div class="page-header compact"><p class="eyebrow gold">SAVED FOR LATER</p><h1>Your favorites</h1><p>The browser remembers these on this device.</p></div>
+      <div id="favoritesGrid" class="winery-grid section"></div>
+    </section>
+
+    <section id="myday" class="view">
+      <div class="page-header compact"><p class="eyebrow gold">YOUR WINE DAY</p><h1>Keep it cute. Keep it to three.</h1><p>Add wineries from any profile. Vinny will protect you from overplanning.</p></div>
+      <div id="dayList" class="day-list section"></div>
+    </section>
+
+    <section id="methodology" class="view">
+      <div class="page-header methodology-head">
+        <p class="eyebrow gold">OUR MOST IMPORTANT FEATURE</p>
+        <h1>The Vinny Welcome Rating</h1>
+        <p>A transparent, evolving editorial assessment designed to help LGBTQ+ travelers make more confident choices.</p>
+      </div>
+      <div class="methodology section">
+        <div class="method-card"><span>01</span><h3>Firsthand experience</h3><p>Visits and direct hospitality experiences from Andrew and Antonio carry significant weight.</p></div>
+        <div class="method-card"><span>02</span><h3>Hospitality preparedness</h3><p>Conflict resolution, harassment prevention, and inclusion training may support the assessment when verified.</p></div>
+        <div class="method-card"><span>03</span><h3>Public actions</h3><p>Documented community engagement, leadership actions, endorsements, or political giving may be considered with context and reliable sourcing.</p></div>
+        <div class="method-card"><span>04</span><h3>Guest experience</h3><p>Credible, specific reports can reveal whether welcoming practices are consistent across visits.</p></div>
+        <div class="method-card"><span>05</span><h3>Right to respond</h3><p>Wineries should have a clear process to correct outdated facts, supply context, and describe improvements.</p></div>
+        <div class="method-card"><span>06</span><h3>Confidence matters</h3><p>A score will be paired with low, medium, or high confidence so limited evidence is never mistaken for a definitive conclusion.</p></div>
+      </div>
+      <div class="section rating-key">
+        <h2>Prototype rating states</h2>
+        <div><b>Vinny Verified</b><span>Strong, current evidence of a welcoming experience</span></div>
+        <div><b>Welcoming</b><span>Positive assessment with sufficient evidence</span></div>
+        <div><b>Promising</b><span>Positive signals, more evidence needed</span></div>
+        <div><b>Mixed Experience</b><span>Meaningful inconsistencies documented</span></div>
+        <div><b>Use Your Discretion</b><span>Substantial verified concerns</span></div>
+        <div><b>Review in Progress</b><span>No conclusion yet</span></div>
+      </div>
+    </section>
+
+    <section id="winery" class="view">
+      <div id="wineryDetail"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-nav="home" class="active" onclick="showView('home')"><span>⌂</span>Home</button>
+    <button data-nav="explore" onclick="showView('explore')"><span>⌕</span>Explore</button>
+    <button data-nav="map" onclick="showView('map')"><span>⌖</span>Map</button>
+    <button data-nav="favorites" onclick="showView('favorites')"><span>♡</span>Favorites</button>
+    <button data-nav="myday" onclick="showView('myday')"><span>☷</span>My Day</button>
+  </nav>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
