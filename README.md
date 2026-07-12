@@ -102,3 +102,36 @@ This version combines the vibe-first discovery experience with the expanded mass
 - Formal documentation workflow, evidence rules, proposed weights, confidence labels, corrections, and review cadence
 
 Everything remains static and uploadable directly to GitHub Pages.
+
+
+## Version 0.5 rich winery profiles
+
+Each of the five winery pages now includes:
+- Detailed hours by venue
+- Last-verified dates
+- Known-for tags
+- Upcoming and recurring events
+- Official calendar links
+- Editorial review snapshots
+- Common visitor-experience patterns
+- External review-platform links
+- Visit-length and reservation guidance
+- Food, group, and best-time recommendations
+- Amenities
+- Sticky in-profile navigation
+- Richer planning sidebars
+- Documentation in `WINERY_PROFILE_DATA_MODEL.md`
+
+The static prototype uses curated event records. A production event system should prefer APIs or RSS/ICS feeds and use a scheduled backend sync where authorized.
+
+
+## Version 0.6 winery personality system
+
+- Adds icon-based Quick Look FAQs
+- Adds Perfect For and Maybe Skip If sections
+- Adds Vinny Scorecard bars
+- Gives each winery a distinct design language
+- Preserves consistent navigation and data structure
+- Adds `WINERY_PROFILE_THEME_SYSTEM.md`
+
+The five prototype themes are Estate, Modern, Moto, European, and Celebration.

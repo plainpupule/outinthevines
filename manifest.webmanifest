@@ -1,5 +1,5 @@
 {
-  "name": "Out in the Vines \u2014 Working Prototype v0.4",
+  "name": "Out in the Vines \u2014 Distinctive Winery Profiles v0.6",
   "short_name": "Out in Vines",
   "start_url": "./",
   "display": "standalone",
@@ -13,5 +13,5 @@
       "purpose": "any maskable"
     }
   ],
-  "description": "A vibe-first inclusive wine travel prototype led by Vinny."
+  "description": "A vibe-first inclusive wine travel prototype with winery-specific profile design."
 }
