@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="demo-banner">VERSION 0.2 CONCEPT · Ratings, picks, and photography remain prototype content.</div>
+  <div class="demo-banner">FOUNDER PREVIEW v0.4 · Working concept for GitHub Pages.</div>
 
   <header class="topbar">
     <button class="brand" onclick="showView('home')" aria-label="Out in the Vines home">
@@ -20,7 +20,7 @@
       <button onclick="showView('explore')">Explore</button>
       <button onclick="showView('map')">Map</button>
       <button onclick="showView('picks')">Our Picks</button>
-      <button onclick="showView('methodology')">Inclusivity</button><button onclick="showView('brandkit')">Brand</button>
+      <button onclick="showView('nearby')">Nearby</button><button onclick="showView('vinny')">Meet Vinny</button><button onclick="showView('methodology')">Inclusivity</button><button onclick="showView('brandkit')">Brand</button>
     </nav>
     <button class="icon-btn" onclick="showView('favorites')" aria-label="Favorites">♡ <span id="favCountTop">0</span></button>
   </header>
@@ -38,9 +38,9 @@
           <p class="eyebrow">TEMECULA, CALIFORNIA</p>
           <h1>Find your kind of<br><em>wine country.</em></h1>
           <p class="hero-copy">Inclusive insights, honest local recommendations, and really good wine.</p>
-          <div class="hero-actions">
-            <button class="primary" onclick="showView('match')">Help me choose</button>
-            <button class="secondary light" onclick="showView('explore')">Explore wineries</button>
+          <div class="hero-actions hero-actions-v2">
+            <button class="primary" onclick="document.querySelector('.intro').scrollIntoView({behavior:'smooth'})">Plan by vibe</button>
+            <button class="secondary light" onclick="showView('nearby')">I’m already in Temecula</button>
           </div>
         </div>
       </div>
@@ -55,13 +55,19 @@
       <section class="section intro">
         <p class="eyebrow plum">START WITH THE VIBE</p>
         <h2>What kind of wine day are we having?</h2>
-        <div class="mood-grid">
-          <button onclick="quickFilter('romantic')"><span>💕</span><strong>Romantic</strong><small>Views, dining, slow sips</small></button>
-          <button onclick="quickFilter('reds')"><span>🍷</span><strong>Great reds</strong><small>Wine first, always</small></button>
-          <button onclick="quickFilter('food')"><span>🍽️</span><strong>Food too</strong><small>No sad crackers today</small></button>
-          <button onclick="quickFilter('social')"><span>🎶</span><strong>Lively</strong><small>Music, groups, energy</small></button>
-          <button onclick="quickFilter('unique')"><span>🏍️</span><strong>Something different</strong><small>Not your standard tasting</small></button>
-          <button onclick="showView('methodology')"><span>🌈</span><strong>Feel welcome</strong><small>See how we evaluate</small></button>
+        <div class="mood-grid vibe-grid">
+          <button onclick="startVibe('romantic')"><span>💕</span><strong>Romantic Escape</strong><small>Sunsets, dining, slow sips</small></button>
+          <button onclick="startVibe('reds')"><span>🍷</span><strong>Big Reds</strong><small>Cab Franc, Syrah, bold blends</small></button>
+          <button onclick="startVibe('sparkling')"><span>🥂</span><strong>Celebration</strong><small>Bubbles, birthdays, good news</small></button>
+          <button onclick="startVibe('food')"><span>🍽️</span><strong>Foodie Day</strong><small>Real meals and pairings</small></button>
+          <button onclick="startVibe('social')"><span>🎶</span><strong>Live & Lively</strong><small>Music, groups, energy</small></button>
+          <button onclick="startVibe('unique')"><span>🏍️</span><strong>Something Different</strong><small>Not your standard tasting</small></button>
+          <button onclick="startVibe('relaxed')"><span>🌿</span><strong>Hidden Gems</strong><small>Lower-key, less hurried</small></button>
+          <button onclick="showView('methodology')"><span>🌈</span><strong>Feel Welcome</strong><small>See how hospitality is evaluated</small></button>
+        </div>
+        <div id="vibeResults" class="vibe-results hidden">
+          <div class="section-head"><div><p class="eyebrow teal">VINNY HAS IDEAS</p><h2 id="vibeTitle">Your wine-day matches</h2></div><button class="text-btn" onclick="showView('match')">Refine this →</button></div>
+          <div id="vibeGrid" class="winery-grid"></div>
         </div>
       </section>
 
@@ -89,6 +95,28 @@
             <span>📍 Temecula locals</span>
           </div>
           <button class="primary" onclick="showView('picks')">See our picks</button>
+        </div>
+      </section>
+
+
+      <section class="section mission-section">
+        <div>
+          <p class="eyebrow plum">WHY OUT IN THE VINES EXISTS</p>
+          <h2>Less guessing.<br>More belonging.</h2>
+        </div>
+        <div class="mission-copy">
+          <p>We love wine country. We also know what it feels like to wonder whether you will be welcomed before you walk through the door.</p>
+          <p>Out in the Vines is designed first for LGBTQ+ wine travelers, while remaining useful, elegant, and inviting for anyone who values exceptional hospitality.</p>
+          <button class="secondary" onclick="showView('methodology')">See the Vinny Welcome Standard</button>
+        </div>
+      </section>
+
+      <section class="section roadmap-preview">
+        <div class="section-head"><div><p class="eyebrow gold">COMING INTO VIEW</p><h2>The future travel companion</h2></div></div>
+        <div class="preview-grid">
+          <article><span>📍</span><h3>Vinny Nearby</h3><p>Open now, close by, and right for the moment.</p><button onclick="showView('nearby')">Try the mock mode</button></article>
+          <article><span>🍇</span><h3>Wine Passport</h3><p>Track wineries visited and unlock regional milestones.</p><button onclick="showView('passport')">Preview passport</button></article>
+          <article><span>🗓️</span><h3>Events</h3><p>Music, dinners, drag brunches, tastings, and more.</p><button onclick="showView('events')">Preview events</button></article>
         </div>
       </section>
 
@@ -186,6 +214,42 @@
         <div class="method-card"><span>05</span><h3>Right to respond</h3><p>Wineries should have a clear process to correct outdated facts, supply context, and describe improvements.</p></div>
         <div class="method-card"><span>06</span><h3>Confidence matters</h3><p>A score will be paired with low, medium, or high confidence so limited evidence is never mistaken for a definitive conclusion.</p></div>
       </div>
+
+      <div class="section standard-framework">
+        <div class="section-head"><div><p class="eyebrow plum">FORMAL REVIEW FRAMEWORK</p><h2>How a review becomes publishable</h2></div></div>
+        <div class="framework-steps">
+          <article><span>1</span><h3>Open a review file</h3><p>Create a unique winery record, assign a reviewer, establish the review period, and log every source.</p></article>
+          <article><span>2</span><h3>Collect evidence</h3><p>Document firsthand visits, hospitality interactions, training confirmation, public actions, guest reports, and winery responses.</p></article>
+          <article><span>3</span><h3>Score dimensions</h3><p>Score each defined category using anchored criteria rather than instinct alone.</p></article>
+          <article><span>4</span><h3>Apply confidence</h3><p>Low, medium, or high confidence reflects the quantity, recency, independence, and consistency of evidence.</p></article>
+          <article><span>5</span><h3>Editorial review</h3><p>A second reviewer checks evidence quality, tone, calculation, unsupported claims, and conflicts of interest.</p></article>
+          <article><span>6</span><h3>Notify and publish</h3><p>Give the winery a factual-correction window, publish the report, and set the next review date.</p></article>
+        </div>
+
+        <div class="score-table">
+          <h2>Proposed weighted dimensions</h2>
+          <div><b>Firsthand LGBTQ+ guest experience</b><span>30%</span><p>Comfort, respect, consistency, and how identity-related moments are handled.</p></div>
+          <div><b>Hospitality and staff conduct</b><span>20%</span><p>Warmth, professionalism, service recovery, and consistent treatment across guests.</p></div>
+          <div><b>Conflict-resolution readiness</b><span>15%</span><p>Documented escalation pathways, management response, and applicable training.</p></div>
+          <div><b>Inclusive practices and representation</b><span>15%</span><p>Policies, language, marketing, facilities, partnerships, and visible signals.</p></div>
+          <div><b>Community engagement</b><span>10%</span><p>Meaningful, sustained participation rather than one-off performative gestures.</p></div>
+          <div><b>Public leadership actions</b><span>10%</span><p>Relevant verified endorsements, donations, statements, or actions reviewed with context.</p></div>
+        </div>
+
+        <div class="evidence-rules">
+          <h2>Documentation rules</h2>
+          <ul>
+            <li>Every material claim receives a source, date, evidence type, and reviewer note.</li>
+            <li>Political activity can inform no more than 10% of the total assessment and can never determine the rating alone.</li>
+            <li>Anonymous guest reports require corroboration before affecting a public designation.</li>
+            <li>Personal experience is labeled as such and separated from verified public facts.</li>
+            <li>Old evidence decays in weight unless it reflects unresolved conduct or an ongoing policy.</li>
+            <li>Wineries can submit corrections, context, training records, ownership changes, and requests for re-review.</li>
+          </ul>
+          <a class="download-link" href="VINNY_WELCOME_STANDARD.md" download>Download the methodology draft →</a>
+        </div>
+      </div>
+
       <div class="section rating-key">
         <h2>Prototype rating states</h2>
         <div><b>Vinny Verified</b><span>Strong, current evidence of a welcoming experience</span></div>
@@ -197,6 +261,78 @@
       </div>
     </section>
 
+
+
+    <section id="nearby" class="view">
+      <div class="page-header nearby-head">
+        <p class="eyebrow gold">VINNY NEARBY · PROTOTYPE MODE</p>
+        <h1>You’re in wine country.<br>What sounds good now?</h1>
+        <p>This mock mode demonstrates the future GPS experience using sample distances and current prototype data.</p>
+      </div>
+      <div class="section nearby-controls">
+        <button onclick="renderNearby('open')">Open now</button>
+        <button onclick="renderNearby('food')">Food nearby</button>
+        <button onclick="renderNearby('quick')">Closest first</button>
+        <button onclick="renderNearby('welcome')">Strong welcome signals</button>
+      </div>
+      <div class="section nearby-shell">
+        <div class="nearby-vinny">
+          <img src="assets/brand/vinny-map.png" alt="Vinny holding a map">
+          <div><strong>Vinny says:</strong><p id="nearbyTip">Three stops is a lovely wine day. Seven is a cry for help.</p></div>
+        </div>
+        <div id="nearbyGrid" class="winery-grid"></div>
+      </div>
+    </section>
+
+    <section id="vinny" class="view">
+      <div class="page-header vinny-head">
+        <p class="eyebrow gold">MEET YOUR WINE-COUNTRY GUIDE</p>
+        <h1>Vinny has excellent taste.</h1>
+        <p>And yes, the throat feathers are naturally this fabulous.</p>
+      </div>
+      <div class="section vinny-story">
+        <div class="vinny-large"><img src="assets/brand/vinny-pride.png" alt="Vinny the realistic iridescent hummingbird mascot"></div>
+        <div>
+          <p class="eyebrow plum">WHY A HUMMINGBIRD?</p>
+          <h2>Small bird. Big personality.</h2>
+          <p>Hummingbirds are curious, energetic, adaptable, and drawn to beautiful places. Vinny brings those same qualities to wine travel.</p>
+          <p>His subtle iridescent rainbow is a nod to the LGBTQ+ community without turning the brand into a wall of rainbow graphics. He is the welcoming guide who helps everyone find the right place for the day they want to have.</p>
+          <div class="vinny-quotes">
+            <blockquote>“Trust me on the Cab Franc.”</blockquote>
+            <blockquote>“Hydrate. Seriously.”</blockquote>
+            <blockquote>“Wine tastes better when you feel like you belong.”</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="passport" class="view">
+      <div class="page-header special">
+        <p class="eyebrow gold">FUTURE FEATURE PREVIEW</p>
+        <h1>Your Temecula Wine Passport</h1>
+        <p>A playful record of where you have been, what you tasted, and what Vinny thinks you should try next.</p>
+      </div>
+      <div class="section">
+        <div class="passport-card">
+          <div class="passport-top"><div><p class="eyebrow plum">TEMECULA PROGRESS</p><h2>2 of 5 prototype wineries</h2></div><img src="assets/brand/vinny-save.png" alt="Vinny saving a favorite"></div>
+          <div class="progress"><span style="width:40%"></span></div>
+          <div class="stamp-grid" id="passportGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="view">
+      <div class="page-header special">
+        <p class="eyebrow gold">EVENT DISCOVERY PREVIEW</p>
+        <h1>What’s happening in wine country?</h1>
+        <p>Sample cards demonstrate how the future site will organize live music, dinners, celebrations, and LGBTQ+ events.</p>
+      </div>
+      <div class="section event-grid">
+        <article><span class="event-type">LIVE MUSIC</span><h3>Sunset Sessions</h3><p>Akash Winery · Saturday · 5:00 PM</p><small>Prototype event only</small></article>
+        <article><span class="event-type">WINE DINNER</span><h3>Estate Pairing Evening</h3><p>Leoness Cellars · Friday · 6:30 PM</p><small>Prototype event only</small></article>
+        <article><span class="event-type">COMMUNITY</span><h3>Out in the Vines Social</h3><p>Temecula Wine Country · Date TBA</p><small>Concept event</small></article>
+      </div>
+    </section>
 
     <section id="brandkit" class="view">
       <div class="page-header special">
@@ -229,6 +365,12 @@
     <button data-nav="favorites" onclick="showView('favorites')"><span>♡</span>Favorites</button>
     <button data-nav="myday" onclick="showView('myday')"><span>☷</span>My Day</button>
   </nav>
+
+
+  <footer class="site-footer">
+    <img src="assets/brand/vinny-cheers.png" alt="Vinny raising a glass">
+    <div><p class="eyebrow gold">VINNY’S LAST SIP</p><blockquote id="lastSip">“The best tasting room is the one where you feel like you belong.”</blockquote></div>
+  </footer>
 
   <script src="data.js"></script>
   <script src="app.js"></script>

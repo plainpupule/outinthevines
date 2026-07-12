@@ -77,3 +77,66 @@ $$(".filter-row button").forEach(b=>b.addEventListener("click",()=>{activeFilter
 $$(".choice-row button").forEach(b=>b.addEventListener("click",()=>{const row=b.parentElement;row.querySelectorAll("button").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");matcher[row.dataset.group]=b.dataset.value;}));
 renderFeatured();renderExplore();renderPicks();updateCounts();renderDay();
 if("serviceWorker"in navigator) navigator.serviceWorker.register("./service-worker.js");
+
+const VIBE_LABELS={
+  romantic:"Romantic escapes",
+  reds:"Big-red destinations",
+  sparkling:"Celebration-ready wineries",
+  food:"Foodie-day favorites",
+  social:"Live and lively stops",
+  unique:"Something different",
+  relaxed:"Lower-key hidden gems"
+};
+
+function startVibe(filter){
+  const list=WINERIES.filter(w=>w.tags.includes(filter)).slice(0,3);
+  const fallback=WINERIES.slice(0,3);
+  document.getElementById("vibeTitle").textContent=VIBE_LABELS[filter]||"Your wine-day matches";
+  document.getElementById("vibeGrid").innerHTML=(list.length?list:fallback).map(card).join("");
+  document.getElementById("vibeResults").classList.remove("hidden");
+  document.getElementById("vibeResults").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function renderNearby(mode="quick"){
+  const distances={leoness:3.2,akash:5.8,doffo:8.4,europa:6.1,wilson:4.5};
+  let list=[...WINERIES];
+  if(mode==="food") list=list.filter(w=>w.tags.includes("food"));
+  if(mode==="welcome") list=list.sort((a,b)=>parseFloat(b.demoRating)-parseFloat(a.demoRating));
+  else list=list.sort((a,b)=>distances[a.id]-distances[b.id]);
+  const tips={
+    open:"Prototype hours would be checked live in the production version.",
+    food:"A real meal beats pretending four crackers were lunch.",
+    quick:"Closest is helpful. Best fit is better.",
+    welcome:"Welcome signals are shown with status and confidence, never as unexplained stars."
+  };
+  document.getElementById("nearbyTip").textContent=tips[mode]||tips.quick;
+  document.getElementById("nearbyGrid").innerHTML=list.map(w=>`
+    <article class="nearby-card">
+      <div class="nearby-photo" style="background-image:linear-gradient(180deg,transparent,rgba(20,10,18,.7)),url('${w.image}')"></div>
+      <div><span class="distance">${distances[w.id]} mi away</span><h3>${w.name}</h3><p>${w.vibe}</p>
+      <div class="card-actions"><button onclick="openWinery('${w.id}')">Open</button><button onclick="addToDay('${w.id}')">+ My Day</button></div></div>
+    </article>`).join("");
+}
+
+function renderPassport(){
+  const visited=["leoness","akash"];
+  document.getElementById("passportGrid").innerHTML=WINERIES.map(w=>`
+    <article class="${visited.includes(w.id)?"visited":""}">
+      <span>${visited.includes(w.id)?"✓":"○"}</span>
+      <strong>${w.name}</strong>
+      <small>${visited.includes(w.id)?"Visited":"Not yet"}</small>
+    </article>`).join("");
+}
+
+const lastSips=[
+  "The best tasting room is the one where you feel like you belong.",
+  "Never rush a sunset tasting.",
+  "Hydrate. Seriously.",
+  "Cab Franc solves more problems than you’d think.",
+  "The best bottle is the one shared with people you love."
+];
+const lastSipEl=document.getElementById("lastSip");
+if(lastSipEl) lastSipEl.textContent="“"+lastSips[Math.floor(Math.random()*lastSips.length)]+"”";
+
+renderNearby();
+renderPassport();

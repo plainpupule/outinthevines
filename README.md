@@ -82,3 +82,23 @@ This package now includes local, bundled visual assets:
 Andrew appears on the left and Antonio appears on the right in the founder portrait.
 
 All image paths are local to the repository, so the site will continue working after upload to GitHub Pages.
+
+
+## Version 0.4
+
+This version combines the vibe-first discovery experience with the expanded mass-appeal product direction.
+
+### New working prototype features
+- Vibe-first recommendation cards and instant results
+- Two homepage entry points: plan by vibe or use mock Nearby mode
+- Expanded Andrew and Antonio story
+- Dedicated Meet Vinny page
+- Mock Nearby experience
+- Wine Passport preview
+- Events preview
+- Randomized Vinny's Last Sip footer
+- Expanded Vinny Welcome Standard methodology page
+- Downloadable `VINNY_WELCOME_STANDARD.md`
+- Formal documentation workflow, evidence rules, proposed weights, confidence labels, corrections, and review cadence
+
+Everything remains static and uploadable directly to GitHub Pages.
