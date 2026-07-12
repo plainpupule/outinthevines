@@ -1,4 +1,4 @@
-# Out in the Vines — GitHub Pages Prototype
+# Out in the Vines — GitHub Pages Prototype v0.2
 
 A mobile-first faux product prototype for an inclusive Temecula wine-country guide starring Vinny.
 
@@ -47,3 +47,20 @@ Demo ratings are intentionally not factual assessments. Replace them only after 
 ## Important
 
 Current winery offerings, hours, age policies, event schedules, and reservation rules can change. The production version should attach a `lastVerified` date and source log to every operational field.
+
+
+## Version 0.2
+
+- Adds prototype photography to winery cards and profiles
+- Adds visible photo disclosures
+- Adds a trust-principles strip to the homepage
+- Adds `PRODUCT_FOUNDATION.md`
+- Adds `DESIGN_SYSTEM.md`
+
+The current remote photographs are visual placeholders and are not represented as photographs of the named wineries.
+
+For launch, replace each `image` field in `data.js` with an owned or licensed file, for example:
+
+```js
+image: "assets/wineries/leoness-hero.jpg"
+```

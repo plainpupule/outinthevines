@@ -1,5 +1,5 @@
 {
-  "name": "Out in the Vines Prototype",
+  "name": "Out in the Vines Prototype v0.2",
   "short_name": "Out in Vines",
   "start_url": "./",
   "display": "standalone",
@@ -12,5 +12,6 @@
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "description": "A mobile-first prototype for inclusive Temecula wine discovery with Vinny."
 }

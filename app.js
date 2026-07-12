@@ -16,7 +16,7 @@ function quickFilter(filter){ activeFilter=filter; showView("explore"); setTimeo
 function card(w){
  const saved=favorites.includes(w.id);
  return `<article class="winery-card">
-  <div class="card-image" style="background:${w.gradient}">
+  <div class="card-image photo-card" style="background-image:linear-gradient(180deg,transparent 30%,rgba(22,10,18,.72)),url('${w.image}')" role="img" aria-label="${w.imageAlt}">
    <span>${w.icon}</span><button class="heart ${saved?"saved":""}" onclick="event.stopPropagation();toggleFavorite('${w.id}')">${saved?"♥":"♡"}</button>
   </div><div class="card-body"><div class="area">${w.area.toUpperCase()}</div><h3>${w.name}</h3><p><strong>${w.vibe}</strong></p><p>${w.short}</p>
   <div class="tags">${w.tags.slice(0,3).map(t=>`<span class="tag">${t}</span>`).join("")}</div>
@@ -50,7 +50,7 @@ function renderDay(){
 }
 function openWinery(id){
  const w=WINERIES.find(x=>x.id===id); if(!w)return;
- $("#wineryDetail").innerHTML=`<div class="winery-hero" style="background:${w.gradient}">
+ $("#wineryDetail").innerHTML=`<div class="winery-hero photo-hero" style="background-image:linear-gradient(180deg,rgba(20,10,18,.1),rgba(20,10,18,.84)),url('${w.image}')" role="img" aria-label="${w.imageAlt}">
   <div class="winery-hero-content"><button class="back" onclick="showView('explore')">← Back to explore</button><p class="eyebrow gold">${w.area.toUpperCase()}</p><h1>${w.name}</h1><p>${w.vibe}</p></div></div>
   <div class="section detail-grid"><div class="detail-main"><div class="verdict">🐦 “${w.verdict}”</div><h2>Why it’s on Vinny’s radar</h2><p>${w.short}</p>
   <div class="fact-list">${w.facts.map(f=>`<div class="fact">✓ ${f}</div>`).join("")}</div>
@@ -59,7 +59,7 @@ function openWinery(id){
    <article class="pick-card antonio"><span class="person">ANTONIO</span><h3>${w.antonio}</h3><p>${w.antonioNote}</p></article>
   </div></div><aside class="detail-side"><div class="rating-box"><p class="eyebrow gold">VINNY WELCOME RATING</p><div class="rating-num">${w.demoRating}<small>/ 5</small></div><strong>${w.status}</strong><small>Confidence: ${w.confidence}</small><small>This is placeholder interface content, not a published assessment.</small></div>
   <div class="detail-actions"><button onclick="toggleFavorite('${w.id}')">${favorites.includes(w.id)?"♥ Saved":"♡ Save winery"}</button><button onclick="addToDay('${w.id}')">+ Add to My Day</button><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(w.address)}" target="_blank" rel="noopener">Directions ↗</a><a href="${w.source}" target="_blank" rel="noopener">Official website ↗</a></div>
-  <p class="source-note">Prototype winery characteristics are summarized from the winery’s official website. Always verify current hours, policies, reservations, and offerings before visiting.</p></aside></div>`;
+  <p class="photo-disclosure">Photography shown is prototype imagery and is not represented as a photograph of this property.</p><p class="source-note">Prototype winery characteristics are summarized from the winery’s official website. Always verify current hours, policies, reservations, and offerings before visiting.</p></aside></div>`;
  showView("winery");
 }
 function runMatcher(){
